@@ -1,2 +1,2 @@
 # printf
-Recode of printf function
+Recode of printf function innit blud
