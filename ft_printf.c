@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/07 15:17:09 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/07 16:16:36 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,17 +120,29 @@ void			string_conversion(va_list args, t_flags *flags)
 {
 	char	*str;
 	int		len;
+	int 	i;
+	int		prec;
 
 	str = va_arg(args, char *);
 	len = ft_strlen(str);
-
-	ft_putstr(str, flags->width, len, *flags);
+	i = 0;
+	if (flags->precision != -1)
+		len = flags->precision;
+	prec = len;
+	if (!flags->minus)
+		while (flags->width > len++)
+			ft_putchar(' ');
+	while (str[i] && i < prec)
+		ft_putchar(str[i++]);
+	if (flags->minus)
+		while (flags->width > len++)
+			ft_putchar(' ');
 }
 
 void			bufferoni(va_list args, t_flags *flags)
 {
 	if (flags->conversion == 's')
-		string_conversion(args, flags);
+		string_conversion(args, flags); 
 }
 
 int				conversion_parser(char *str, va_list args, int i)
