@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:47 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/01 13:01:20 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/07 15:29:38 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@ void			ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void			ft_putstr(char *str)
+void			ft_putstr(char *str, int width, int len, t_flags flags)
 {
 	int		i;
 
 	i = 0;
+	if (!flags.minus)
+		while (width > len++)
+			ft_putchar(' ');
 	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+		ft_putchar(str[i++]);
+	if (flags.minus)
+		while (width > len++)
+			ft_putchar(' ');
 }
 
 void			ft_putnbr(int nb)
