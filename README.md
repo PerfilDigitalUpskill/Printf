@@ -11,6 +11,8 @@ Currently working on d and i conversions (precision working, no flags or width y
 
 TO DO:
 
+-make a Makefile.
+
 -separate functions into individual files (aka ORGANIZE).
 
 -run norminette.
