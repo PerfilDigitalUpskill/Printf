@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 14:53:42 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 16:18:24 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:57:21 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		main()
 {
-/*	
+	
 	ft_printf("%s\n", "Bfica");
 	ft_printf("%4s\n", "Bfica");
 	ft_printf("%5s\n", "Bfica");
@@ -40,12 +40,16 @@ int		main()
 	ft_printf("%4c\n", 'f');
 	ft_printf("__________________\n");
 	ft_printf("%d\n", 22);
-	ft_printf("%.4d\n", 22);
-	ft_printf("%.10d\n", 22);
-*/
 	ft_printf("%4d\n", 22);
 	ft_printf("%-4d\n", 22);
+	ft_printf("%06d\n", 22);
+	printf("%d\n", 22);
+	printf("%4d\n", 22);
+	printf("%-4d\n", 22);
+	printf("%06d\n", 22);
+/*
 	ft_printf("%8d\n", 22);
 	ft_printf("%-8.4d\n", 22);
+*/
 	return (0);
 }
