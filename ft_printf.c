@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 14:38:05 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:18:26 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,24 +165,47 @@ void			flags_checker(t_flags *flags)
 		flags->zero = 0;
 }
 
+char			*apply_precision(char *nbr, int len, t_flags *flags)
+{
+	char 		*str;
+	char		*temp;
+
+	str = precision_zeros(flags->precision - len);
+	temp = ft_strjoin(str, nbr);
+	freebird((void *)&nbr);
+	freebird((void *)&str);
+	nbr = temp;
+
+	return (nbr);
+}
+
 void			int_conversion(va_list args, t_flags *flags)
 {
 	char 		*nbr;
-	char		*temp;
-	char		*str;
 	int			len;
 
 	flags_checker(flags);
 	nbr = ft_itoa(va_arg(args, int));
 	len = ft_strlen(nbr);
 	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
+	len = ft_strlen(nbr);
+	while (flags->width > len && !(flags->minus) && !(flags->zero))
 	{
-		str = precision_zeros(flags->precision - len);
-		temp = ft_strjoin(str, nbr);
-		freebird((void *)&nbr);
-		nbr = temp;
+		ft_putchar(' ');
+		len++;
+	}
+	while (flags->width > len && flags->zero)
+	{
+		ft_putchar('0');
+		len++;
 	}
 	ft_putstr(nbr);
+	while (flags->width > len && flags->minus)
+	{
+		ft_putchar(' ');
+		len++;
+	}
 }
 
 void			bufferoni(va_list args, t_flags *flags)
