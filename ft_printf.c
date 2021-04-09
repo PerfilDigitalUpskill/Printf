@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 16:18:26 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:57:19 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,9 +212,9 @@ void			bufferoni(va_list args, t_flags *flags)
 {
 	if (flags->conversion == 's')
 		string_conversion(args, flags);
-   if (flags->conversion == 'c')
+	if (flags->conversion == 'c')
    		char_conversion(args, flags);
-   if (flags->conversion == 'd' || flags->conversion == 'i')
+	if (flags->conversion == 'd' || flags->conversion == 'i')
 	   int_conversion(args, flags);
 }
 
