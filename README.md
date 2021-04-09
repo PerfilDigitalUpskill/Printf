@@ -1,10 +1,9 @@
 # printf
 Recode of printf function innit blud
 
-String conversions seem to be working with flags, precision and conversions.
+s conversions working (w/o extensive testing)
+c conversions working (w/o extensive testing)
 
-Next in line is getting char conversions to work, which should be quick
+Currently working on d and i conversions (precision working, no flags or width yet)
 
-After that, start working on digits, more specifically d and i conversions.
-
-The projects a mess so far.
+The projects a mess 🥳
