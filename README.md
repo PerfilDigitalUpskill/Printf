@@ -5,8 +5,9 @@ s conversions working (w/o extensive testing)
 
 c conversions working (w/o extensive testing)
 
+d conversions working (w/o extensive testing)
 
-Currently working on d and i conversions (precision working, no flags or width yet)
+i conversions working (w/o extensive testing)
 
 
 TO DO:
