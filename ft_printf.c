@@ -6,11 +6,17 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/07 16:16:36 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:38:05 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void		freebird(void **ptr)
+{
+	free(*ptr);
+	*ptr = NULL;
+}
 
 void			get_flags(char *str, int *i, t_flags *flags)
 {
@@ -139,10 +145,54 @@ void			string_conversion(va_list args, t_flags *flags)
 			ft_putchar(' ');
 }
 
+void			char_conversion(va_list args, t_flags *flags)
+{
+	unsigned char 	c;
+	int				w;
+
+	c = va_arg(args, int);
+	w = flags->width;
+	while (w-- > 1)
+		ft_putchar(' ');
+	ft_putchar(c);
+}
+
+void			flags_checker(t_flags *flags)
+{
+	if (flags->minus && flags->zero)
+		flags->zero = 0;
+	if (flags->zero && flags->precision >= 0)
+		flags->zero = 0;
+}
+
+void			int_conversion(va_list args, t_flags *flags)
+{
+	char 		*nbr;
+	char		*temp;
+	char		*str;
+	int			len;
+
+	flags_checker(flags);
+	nbr = ft_itoa(va_arg(args, int));
+	len = ft_strlen(nbr);
+	if (flags->precision > len)
+	{
+		str = precision_zeros(flags->precision - len);
+		temp = ft_strjoin(str, nbr);
+		freebird((void *)&nbr);
+		nbr = temp;
+	}
+	ft_putstr(nbr);
+}
+
 void			bufferoni(va_list args, t_flags *flags)
 {
 	if (flags->conversion == 's')
-		string_conversion(args, flags); 
+		string_conversion(args, flags);
+   if (flags->conversion == 'c')
+   		char_conversion(args, flags);
+   if (flags->conversion == 'd' || flags->conversion == 'i')
+	   int_conversion(args, flags);
 }
 
 int				conversion_parser(char *str, va_list args, int i)

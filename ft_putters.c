@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:47 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/07 16:14:57 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:04:37 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 void			ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+void			ft_putstr(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
 
 void			ft_putnbr(int nb)

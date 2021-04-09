@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/07 16:15:29 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:29:57 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,14 @@ typedef struct	s_flags
 
 void	ft_putchar(char c);
 int		ft_strlen(char *str);
+void	ft_putstr(char *str);
 char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_putnbr(int nb);
 void	ft_putnbr_base(int nb, char *base);
 int		ft_atoi(const char *nptr);
+char	*ft_itoa(int n);
+char	*precision_zeros(int len);
 int		parse_str(char *str, va_list args);
 int		ft_printf(const char *, ...);
 
