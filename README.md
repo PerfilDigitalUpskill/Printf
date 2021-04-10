@@ -9,6 +9,13 @@ d conversions working (w/o extensive testing)
 
 i conversions working (w/o extensive testing)
 
+u conversions working (w/o extensive testing)
+
+x conversions working (w/o extensive testing)
+
+X conversions working (w/o extensive testing)
+
+
 
 TO DO:
 
@@ -18,7 +25,7 @@ TO DO:
 
 -run norminette.
 
--work on conversions u, x, X and p.
+-work on p conversions.
 
 -run actual tests instead of just my crappy main file.
 
