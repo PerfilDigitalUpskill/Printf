@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 16:57:19 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/10 15:27:14 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,13 +179,101 @@ char			*apply_precision(char *nbr, int len, t_flags *flags)
 	return (nbr);
 }
 
-void			int_conversion(va_list args, t_flags *flags)
+void			signed_int_conversion(va_list args, t_flags *flags)
 {
 	char 		*nbr;
 	int			len;
 
 	flags_checker(flags);
 	nbr = ft_itoa(va_arg(args, int));
+	len = ft_strlen(nbr);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
+	len = ft_strlen(nbr);
+	while (flags->width > len && !(flags->minus) && !(flags->zero))
+	{
+		ft_putchar(' ');
+		len++;
+	}
+	while (flags->width > len && flags->zero)
+	{
+		ft_putchar('0');
+		len++;
+	}
+	ft_putstr(nbr);
+	while (flags->width > len && flags->minus)
+	{
+		ft_putchar(' ');
+		len++;
+	}
+}
+
+void			unsigned_int_conversion(va_list args, t_flags *flags)
+{
+	char 			*nbr;
+	int				len;
+
+	flags_checker(flags);
+	nbr = ft_itoa(va_arg(args, unsigned int));
+	len = ft_strlen(nbr);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
+	len = ft_strlen(nbr);
+	while (flags->width > len && !(flags->minus) && !(flags->zero))
+	{
+		ft_putchar(' ');
+		len++;
+	}
+	while (flags->width > len && flags->zero)
+	{
+		ft_putchar('0');
+		len++;
+	}
+	ft_putstr(nbr);
+	while (flags->width > len && flags->minus)
+	{
+		ft_putchar(' ');
+		len++;
+	}
+}
+
+void			hex_low_conversion(va_list args, t_flags *flags)
+{
+	char 			*nbr;
+	int				len;
+
+	flags_checker(flags);
+	nbr = hex_itoa(va_arg(args, unsigned int), "0123456789abcdef");
+	len = ft_strlen(nbr);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
+	len = ft_strlen(nbr);
+	while (flags->width > len && !(flags->minus) && !(flags->zero))
+	{
+		ft_putchar(' ');
+		len++;
+	}
+	while (flags->width > len && flags->zero)
+	{
+		ft_putchar('0');
+		len++;
+	}
+	ft_putstr(nbr);
+	while (flags->width > len && flags->minus)
+	{
+		ft_putchar(' ');
+		len++;
+	}
+}
+
+
+void			hex_up_conversion(va_list args, t_flags *flags)
+{
+	char 			*nbr;
+	int				len;
+
+	flags_checker(flags);
+	nbr = hex_itoa(va_arg(args, unsigned int), "0123456789ABCDEF");
 	len = ft_strlen(nbr);
 	if (flags->precision > len)
 		nbr = apply_precision(nbr, len, flags);
@@ -215,7 +303,14 @@ void			bufferoni(va_list args, t_flags *flags)
 	if (flags->conversion == 'c')
    		char_conversion(args, flags);
 	if (flags->conversion == 'd' || flags->conversion == 'i')
-	   int_conversion(args, flags);
+	   signed_int_conversion(args, flags);
+	if (flags->conversion == 'u')
+		unsigned_int_conversion(args, flags);
+	if (flags->conversion == 'x')
+		hex_low_conversion(args, flags);
+	if (flags->conversion == 'X')
+		hex_up_conversion(args, flags);
+
 }
 
 int				conversion_parser(char *str, va_list args, int i)
@@ -229,9 +324,6 @@ int				conversion_parser(char *str, va_list args, int i)
 	get_precision(str, &i, args, &flags);
 	get_conversion(str, &i, &flags);
 	bufferoni(args, &flags);
-/*
-	printf("zero is %d, minus is %d, width is %d, precision is %d, conversion is %c\n", flags.zero, flags.minus, flags.width, flags.precision, flags.conversion); 
-*/
 	return (i);	
 }
 

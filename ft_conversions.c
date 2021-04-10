@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 14:38:20 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/10 15:00:31 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int				ft_atoi(const char *nptr)
 	return (number * sign);
 }
 
-char		*precision_zeros(int len)
+char			*precision_zeros(int len)
 {
 	int			i;
 	char		*str;
@@ -95,3 +95,5 @@ char		*precision_zeros(int len)
 	str[len] = '\0';
 	return (str);
 }
+
+
