@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:47 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/09 14:04:37 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/10 15:18:45 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void			ft_putnbr(int nb)
 		ft_putnbr(nb / 10);
 	ft_putchar(nb % 10 + '0');
 }
-
+/*
 static int		check_base(char *base)
 {
 	int		i;
@@ -73,29 +73,27 @@ static int		check_base(char *base)
 	}
 	return (1);
 }
-
-void			ft_putnbr_base(int nb, char *base)
+*/
+char			*hex_itoa(int nb, char *base)
 {
 	int 	size;
 	int		nbr[100];
 	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
 	size = ft_strlen(base);
-	if (check_base(base))
+	while (nb)
 	{
-		if (nb < 0)
-		{
-			nb *= -1;
-			ft_putchar('-');
-		}
-		while (nb)
-		{
-			nbr[i] = nb % size;
-			nb = nb / size;
-			i++;
-		}
-		while (--i >= 0)
-			ft_putchar(base[nbr[i]]);
+		nbr[i] = nb % size;
+		nb = nb / size;
+		i++;
 	}
+	str = malloc(sizeof(char) * (i + 1));
+	j = 0;
+	while (--i >= 0)
+		str[j++] = base[nbr[i]];
+	str[j] = '\0';
+	return (str);
 }
