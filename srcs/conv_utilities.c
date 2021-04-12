@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:21:11 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:31:12 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-char	*hex_itoa(long long int nb, char *base)
+char	*hex_itoa(int nb, char *base)
 {
 	int		size;
 	int		nbr[50];
@@ -78,6 +78,29 @@ char	*hex_itoa(long long int nb, char *base)
 	return (str);
 }
 
+char	*long_hex_itoa(unsigned long long int nb, char *base)
+{
+	int		size;
+	int		nbr[50];
+	int		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	size = ft_strlen(base);
+	while (nb)
+	{
+		nbr[i] = nb % size;
+		nb = nb / size;
+		i++;
+	}
+	str = malloc(sizeof(char) * (i + 1));
+	j = 0;
+	while (--i >= 0)
+		str[j++] = base[nbr[i]];
+	str[j] = '\0';
+	return (str);
+}
 int	ft_atoi(const char *nptr)
 {
 	int		i;

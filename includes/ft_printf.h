@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:22:40 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:36:42 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	hex_up_conversion(va_list args, t_flags *flags);
 
 void	string_conversion(va_list args, t_flags *flags);
 void	char_conversion(va_list args, t_flags *flags);
-void	ptr_conversion(va_list args);
+void	ptr_conversion(va_list args, t_flags *flags);
 
 void	freebird(void **ptr);
 t_flags	init_flags(void);
@@ -49,6 +49,7 @@ char	*apply_precision(char *nbr, int len, t_flags *flags);
 
 char	*ft_itoa(int n);
 char	*hex_itoa(int nb, char *base);
+char	*long_hex_itoa(unsigned long long int nb, char *base);
 int		ft_atoi(const char *nptr);
 
 void	ft_putchar(char c);
