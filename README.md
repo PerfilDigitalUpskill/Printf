@@ -19,15 +19,15 @@ X conversions working (w/o extensive testing)
 
 TO DO:
 
--make a Makefile.
+-make a Makefile. ✅
 
--separate functions into individual files (aka ORGANIZE).
+-separate functions into individual files (aka ORGANIZE). ✅
 
 -run norminette.
 
 -work on p conversions.
 
--get return value working
+-get return value working.
 
 -run actual tests instead of just my crappy main file.
 
