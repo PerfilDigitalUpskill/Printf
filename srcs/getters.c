@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:10:14 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 13:27:58 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 16:42:47 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ void	get_precision(char *str, int *i, va_list args, t_flags *flags)
 	{
 		z++;
 		if (str[z] == '*')
+		{
 			flags->precision = va_arg(args, int);
+			z++;
+		}
 		else
 		{
 			while (str[z] >= '0' && str[z] <= '9')
