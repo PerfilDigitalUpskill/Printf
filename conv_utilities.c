@@ -6,15 +6,15 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/10 15:00:31 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 14:32:14 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		counter(int n)
+static int	counter(int n)
 {
-	int			i;
+	int		i;
 
 	i = 1;
 	while (n >= 10 || n <= -10)
@@ -27,11 +27,11 @@ static int		counter(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char		*str;
-	long		nbr;
-	int			i;
+	char	*str;
+	long	nbr;
+	int		i;
 
 	nbr = n;
 	i = counter(n);
@@ -54,11 +54,35 @@ char			*ft_itoa(int n)
 	return (str);
 }
 
-int				ft_atoi(const char *nptr)
+char	*hex_itoa(int nb, char *base)
 {
-	int 		i;
-	int 		sign;
-	int 		number;
+	int		size;
+	int		nbr[50];
+	int		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	size = ft_strlen(base);
+	while (nb)
+	{
+		nbr[i] = nb % size;
+		nb = nb / size;
+		i++;
+	}
+	str = malloc(sizeof(char) * (i + 1));
+	j = 0;
+	while (--i >= 0)
+		str[j++] = base[nbr[i]];
+	str[j] = '\0';
+	return (str);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int		i;
+	int		sign;
+	int		number;
 
 	i = 0;
 	while (nptr[i] && ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32)))
@@ -79,21 +103,3 @@ int				ft_atoi(const char *nptr)
 	}
 	return (number * sign);
 }
-
-char			*precision_zeros(int len)
-{
-	int			i;
-	char		*str;
-
-	i = 0;
-	str = malloc(sizeof(char) * (len + 1));
-	while (i < len)
-	{
-		str[i] = '0';
-		i++;
-	}
-	str[len] = '\0';
-	return (str);
-}
-
-
