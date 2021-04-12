@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 14:32:14 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:21:11 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-char	*hex_itoa(int nb, char *base)
+char	*hex_itoa(long long int nb, char *base)
 {
 	int		size;
 	int		nbr[50];

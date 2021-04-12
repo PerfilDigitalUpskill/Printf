@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 14:37:20 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:21:44 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	converter(va_list args, t_flags *flags)
 		hex_low_conversion(args, flags);
 	if (flags->conversion == 'X')
 		hex_up_conversion(args, flags);
+	if (flags->conversion == 'p')
+		ptr_conversion(args);
 }
 
 int	conversion_parser(char *str, va_list args, int i)

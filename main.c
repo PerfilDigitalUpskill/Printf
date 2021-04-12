@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 14:53:42 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 16:07:42 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 16:28:14 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		main()
 	printf("%-4X\n", 34);
 */
 	ft_printf("Whats poppin %-8.4d\n", 27);
+	ft_printf("My name is %s, and I am %*d, or in hex, %.*x\n", "Manuel", 4, 26, 5, 26);
 	return (0);
 }
