@@ -27,6 +27,8 @@ TO DO:
 
 -work on p conversions.
 
+-get return value working
+
 -run actual tests instead of just my crappy main file.
 
 The projects a mess 🥳
