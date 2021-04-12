@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:14:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 14:39:02 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/12 16:25:10 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	i = (ft_strlen((char *)s1));
 	z = (ft_strlen((char *)s2));
-	if (!(str = (char*)malloc(sizeof(char) * (z + i + 1))))
+	str = (char *)malloc(sizeof(char) * (z + i + 1));
+	if (!str)
 		return (0);
 	i = 0;
 	while (s1[i])
@@ -65,9 +66,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	z = 0;
 	while (s2[z])
 	{
-		str[i] = s2[z];
-		i++;
-		z++;
+		str[i++] = s2[z++];
 	}
 	str[i] = '\0';
 	return (str);
