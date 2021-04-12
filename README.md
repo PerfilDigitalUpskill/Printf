@@ -15,6 +15,8 @@ x conversions working (w/o extensive testing)
 
 X conversions working (w/o extensive testing)
 
+p conversions working (w/o extensive testing)
+
 
 
 TO DO:
@@ -24,8 +26,6 @@ TO DO:
 -separate functions into individual files (aka ORGANIZE). ✅
 
 -run norminette.
-
--work on p conversions.
 
 -get return value working.
 
