@@ -6,7 +6,7 @@
 #    By: malmeida <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/12 14:45:50 by malmeida          #+#    #+#              #
-#    Updated: 2021/04/12 15:55:51 by malmeida         ###   ########.fr        #
+#    Updated: 2021/04/12 16:04:14 by malmeida         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
-			ranlib $(NAME)
 
 %.o: %.c
 			gcc $(CFLAGS) -I $(HDRS) -c $< -o $@
