@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:36:29 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 15:48:52 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ int	parse_str(char *str, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list		args;
-	int			char_counter;
 	char		*str;
 
+	counteroni(0, 0);
 	va_start(args, format);
 	str = ft_strdup(format);
-	char_counter = parse_str(str, args);
+	parse_str(str, args);
 	va_end(args);
 	free((char *)str);
-	return (char_counter);
+	return (counteroni(0, 1));
 }

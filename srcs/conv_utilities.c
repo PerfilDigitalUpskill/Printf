@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:31:12 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 14:56:15 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*long_hex_itoa(unsigned long long int nb, char *base)
 	str[j] = '\0';
 	return (str);
 }
+
 int	ft_atoi(const char *nptr)
 {
 	int		i;

@@ -6,15 +6,27 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:47 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 14:38:12 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 15:48:26 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int	counteroni(int n, int f)
+{
+	static int	biff;
+
+	if (f)
+		biff += n;
+	if (!f)
+		biff = 0;
+	return (biff);
+}
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	counteroni(1, 1);
 }
 
 void	ft_putstr(char *str)
