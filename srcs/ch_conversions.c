@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:50:28 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:06:39 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ void	char_conversion(va_list args, t_flags *flags)
 
 	c = va_arg(args, int);
 	w = flags->width;
-	while (w-- > 1)
+	while (w-- > 1 && !flags->minus)
 		ft_putchar(' ');
 	ft_putchar(c);
+	while (w-- > 1 && flags->minus)
+		ft_putchar(' ');
 }
 
 void	ptr_conversion(va_list args, t_flags *flags)
