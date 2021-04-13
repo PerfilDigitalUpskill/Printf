@@ -27,7 +27,7 @@ TO DO:
 
 -run norminette.
 
--get return value working.
+-get return value working. ✅
 
 -run actual tests instead of just my crappy main file.
 
