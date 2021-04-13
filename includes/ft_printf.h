@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 17:36:42 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 15:50:21 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char	*hex_itoa(int nb, char *base);
 char	*long_hex_itoa(unsigned long long int nb, char *base);
 int		ft_atoi(const char *nptr);
 
+int		counteroni(int n, int f);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
