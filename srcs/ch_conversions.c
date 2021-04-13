@@ -6,11 +6,17 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 17:10:43 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:18:55 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ch_flags_checker(t_flags *flags)
+{
+	if (flags->precision != -1 && flags->precision < -1)
+		flags->minus = 1;
+}
 
 void	string_conversion(va_list args, t_flags *flags)
 {
@@ -40,6 +46,7 @@ void	char_conversion(va_list args, t_flags *flags)
 	unsigned char	c;
 	int				w;
 
+	ch_flags_checker(flags);
 	c = va_arg(args, int);
 	w = flags->width;
 	while (w-- > 1 && !flags->minus)

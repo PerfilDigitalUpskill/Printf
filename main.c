@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 14:53:42 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 17:09:19 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:14:33 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		main()
 	ft_printf("My name is %s, and I am %*d, or in hex, %.*x\n", "Manuel", 4, 26, 5, 26);
 */	
 	
-	ft_printf("%-10c\n", '0');
-	ft_printf("%10c\n", '0');
+	ft_printf("%*c\n", -2, '0');
+	printf("%*c\n ", -2, '0');
 	return (0);
 }

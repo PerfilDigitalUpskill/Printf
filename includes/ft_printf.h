@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 16:37:03 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:17:49 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	unsigned_int_conversion(va_list args, t_flags *flags);
 void	hex_low_conversion(va_list args, t_flags *flags);
 void	hex_up_conversion(va_list args, t_flags *flags);
 
+void	ch_flags_checker(t_flags *flags);
 void	string_conversion(va_list args, t_flags *flags);
 void	char_conversion(va_list args, t_flags *flags);
 void	ptr_conversion(va_list args, t_flags *flags);
