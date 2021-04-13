@@ -4,14 +4,14 @@ Recode of printf function innit blud
 PROGRESS:
 
 ```
-c conversions
-s conversions
-d conversions
-i conversions
-u conversions
-x conversions
-X conversions
-p conversions
+c conversions ✅
+s conversions ❌
+d conversions ❌
+i conversions ❌
+u conversions ❌
+x conversions ❌
+X conversions ❌
+p conversions ❌
 ```
 
 
