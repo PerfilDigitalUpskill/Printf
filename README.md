@@ -1,22 +1,18 @@
 # printf
 Recode of printf function innit blud
 
-s conversions working (w/o extensive testing)
+PROGRESS:
 
-c conversions working (w/o extensive testing)
-
-d conversions working (w/o extensive testing)
-
-i conversions working (w/o extensive testing)
-
-u conversions working (w/o extensive testing)
-
-x conversions working (w/o extensive testing)
-
-X conversions working (w/o extensive testing)
-
-p conversions working (w/o extensive testing)
-
+```
+c conversions
+s conversions
+d conversions
+i conversions
+u conversions
+x conversions
+X conversions
+p conversions
+```
 
 
 TO DO:
