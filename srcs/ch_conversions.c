@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 17:18:55 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/13 17:24:27 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ch_flags_checker(t_flags *flags)
 {
-	if (flags->precision != -1 && flags->precision < -1)
+	if (flags->width < 0)
 		flags->minus = 1;
 }
 
