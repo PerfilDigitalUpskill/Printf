@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 14:16:49 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:00:29 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	string_conversion(va_list args, t_flags *flags)
 		str = "(null)";
 	len = ft_strlen(str);
 	i = 0;
-	if (flags->precision > 0 && len > flags->precision)
+	if (flags->precision > -1 && len > flags->precision)
 		len = flags->precision;
 	prec = len;
 	if (!flags->minus)
