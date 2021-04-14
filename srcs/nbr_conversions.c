@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 15:40:27 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:21:22 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void	flags_checker(t_flags *flags)
 		flags->zero = 0;
 	if (flags->zero && flags->precision >= 0)
 		flags->zero = 0;
+	if (flags->width < 0)
+	{
+		flags->minus = 1;
+		flags->width *= -1;
+	}
 }
 
 void	signed_int_conversion(va_list args, t_flags *flags)
