@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 17:17:49 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:57:13 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	ptr_conversion(va_list args, t_flags *flags);
 
 void	freebird(void **ptr);
 t_flags	init_flags(void);
-char	*precision_zeros(int len);
+char	*precision_zeros(int len, int neg);
+void	handle_negs(char **nbr, int len);
 char	*apply_precision(char *nbr, int len, t_flags *flags);
 
 char	*ft_itoa(int n);
