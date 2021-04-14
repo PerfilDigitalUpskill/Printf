@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 15:00:29 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:03:33 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,5 @@ void	ptr_conversion(va_list args, t_flags *flags)
 	ft_putstr(str);
 	while (flags->width > j++ && flags->minus)
 		ft_putchar(' ');
+	freebird((void *)&str);
 }
