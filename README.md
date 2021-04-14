@@ -5,7 +5,7 @@ PROGRESS:
 
 ```
 c conversions ✅
-s conversions ❌
+s conversions ✅
 d conversions ❌
 i conversions ❌
 u conversions ❌
