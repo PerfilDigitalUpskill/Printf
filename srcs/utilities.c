@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:42:12 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 14:42:53 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:59:52 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@ t_flags	init_flags(void)
 	return (flags);
 }
 
-char	*precision_zeros(int len)
+char	*precision_zeros(int len, int neg)
 {
 	int			i;
 	char		*str;
 
 	i = 0;
+	if (neg)
+		len++;
 	str = malloc(sizeof(char) * (len + 1));
+	if (neg)
+	{
+		str[0] = '-';
+		i++;
+	}
 	while (i < len)
 	{
 		str[i] = '0';
@@ -46,12 +53,38 @@ char	*precision_zeros(int len)
 	return (str);
 }
 
+void	handle_negs(char **nbr, int	len)
+{
+	char	*temp;
+	int		i;
+
+	i = 0;
+	temp = ft_strdup(*nbr);
+	freebird((void *)nbr);
+	*nbr = malloc(sizeof(char) * (len + 1));
+	if (!nbr)
+		return ;
+	while (temp[i])
+	{
+		(*nbr)[i] = temp[i + 1];
+		i++;
+	}
+	(*nbr)[i] = '\0';
+	freebird((void *)&temp);
+}
+
 char	*apply_precision(char *nbr, int len, t_flags *flags)
 {
 	char		*str;
 	char		*temp;
+	int			neg;
 
-	str = precision_zeros(flags->precision - len);
+	neg = 0;
+	if (nbr[0] == '-')
+		neg = 1;
+	str = precision_zeros(flags->precision - len, neg);
+	if (neg == 1)
+		handle_negs(&nbr, len - 1);
 	temp = ft_strjoin(str, nbr);
 	freebird((void *)&nbr);
 	freebird((void *)&str);
