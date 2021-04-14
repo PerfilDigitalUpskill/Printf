@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:42:12 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 19:04:36 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:11:16 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*precision_zeros(int len, int neg)
 	{
 		str[0] = '-';
 		i++;
+		len++;
 	}
 	while (i < len)
 	{
