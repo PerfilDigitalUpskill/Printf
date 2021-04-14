@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 14:01:24 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/14 14:05:10 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,14 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	if (flags->precision > len)
 		nbr = apply_precision(nbr, len, flags);
 	len = ft_strlen(nbr);
-	while (flags->width > len && !(flags->minus) && !(flags->zero))
-	{
+	while (flags->width > len++ && !(flags->minus) && !(flags->zero))
 		ft_putchar(' ');
-		len++;
-	}
-	while (flags->width > len && flags->zero)
-	{
+	while (flags->width > len++ && flags->zero)
 		ft_putchar('0');
-		len++;
-	}
 	ft_putstr(nbr);
-	while (flags->width > len && flags->minus)
-	{
+	while (flags->width > len++ && flags->minus)
 		ft_putchar(' ');
-		len++;
-	}
+	freebird((void *)&nbr);
 }
 
 void	unsigned_int_conversion(va_list args, t_flags *flags)
