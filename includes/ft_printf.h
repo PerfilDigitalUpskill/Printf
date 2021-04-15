@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 16:22:40 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:07:59 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*precision_zeros(int len);
 void	handle_negs(char **nbr, int len);
 char	*apply_precision(char *nbr, int len, t_flags *flags);
 
-char	*ft_itoa(int n);
+char	*ft_itoa(long int n);
 char	*hex_itoa(int nb, char *base);
 char	*long_hex_itoa(unsigned long long int nb, char *base);
 int		ft_atoi(const char *nptr);
