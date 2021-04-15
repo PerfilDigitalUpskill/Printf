@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 16:20:05 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:37:13 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,21 @@ void	handle_conversions(t_flags *flags, char **nbr, int len)
 
 void	signed_int_conversion(va_list args, t_flags *flags)
 {
-	char	*nbr;
-	int		len;
-	int		n;
+	char			*nbr;
+	int				len;
+	int				n;
+	unsigned int	k;
 
 	flags_checker(flags);
 	n = va_arg(args, int);
 	if (n < 0)
 	{
-		n *= -1;
+		k = n * -1;
 		flags->neg = 1;
 	}
-	nbr = ft_itoa(n);
+	else
+		k = n;
+	nbr = ft_itoa(k);
 	if (nbr[0] == '0' && nbr[1] == '\0' && flags->precision == 0)
 	{
 		freebird((void *)&nbr);
