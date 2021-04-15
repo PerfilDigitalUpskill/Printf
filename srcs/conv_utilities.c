@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/13 14:56:15 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:07:10 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	counter(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	char	*str;
 	long	nbr;
