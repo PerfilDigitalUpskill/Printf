@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 17:25:13 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:30:24 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	flags_checker(t_flags *flags)
 {
-	if (flags->minus && flags->zero)
-		flags->zero = 0;
-	if (flags->zero && flags->precision >= 0)
-		flags->zero = 0;
 	if (flags->width < 0)
 	{
 		flags->minus = 1;
 		flags->width *= -1;
 	}
+	if (flags->minus && flags->zero)
+		flags->zero = 0;
+	if (flags->zero && flags->precision >= 0)
+		flags->zero = 0;
 }
 
 void	handle_conversions(t_flags *flags, char **nbr, int len)
