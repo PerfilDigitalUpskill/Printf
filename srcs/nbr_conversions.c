@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 17:05:02 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:25:13 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	int				n;
 	long int		k;
 
-	flags_checker(flags);
 	n = va_arg(args, int);
 	if (n < 0)
 	{
@@ -78,6 +77,7 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 		nbr = ft_strdup("");
 	}	
 	len = ft_strlen(nbr);
+	flags_checker(flags);
 	handle_conversions(flags, &nbr, len);
 	freebird((void *)&nbr);
 }
