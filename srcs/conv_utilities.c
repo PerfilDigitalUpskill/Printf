@@ -6,13 +6,13 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 17:07:10 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:13:52 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	counter(int n)
+static int	counter(long int n)
 {
 	int		i;
 
