@@ -62,8 +62,8 @@ int		main()
 	ft_printf("My name is %s, and I am %*d, or in hex, %.*x\n", "Manuel", 4, 26, 5, 26);
 */	
 	
-	ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- \n", -2, 0, 21, 1);
-	printf(" --0*%0*.0d*0 0*%0*.10d*0-- \n", -2, 0, 21, 1);
+	ft_printf(" --0*%0*.0d*0 0*%0*.10d*0-- \n", -21, INT_MAX, 21, INT_MIN);
+	printf(" --0*%0*.0d*0 0*%0*.10d*0-- \n", -21, INT_MAX, 21, INT_MIN);
 
 	return (0);
 }
