@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 16:37:13 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:05:02 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	char			*nbr;
 	int				len;
 	int				n;
-	unsigned int	k;
+	long int		k;
 
 	flags_checker(flags);
 	n = va_arg(args, int);
 	if (n < 0)
 	{
-		k = n * -1;
+		k = n;
+		k *= -1;	
 		flags->neg = 1;
 	}
 	else
