@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 15:27:09 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 17:44:32 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,15 @@ int	parse_str(char *str, va_list args)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-			i = conversion_parser(str, args, i);
+		{
+			if (str[i + 1] == '%')
+			{
+				ft_putchar(str[i + 1]);
+				i++;
+			}
+			else
+				i = conversion_parser(str, args, i);
+		}
 		else
 			ft_putchar(str[i]);
 		i++;

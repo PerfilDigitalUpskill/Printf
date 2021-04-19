@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 15:23:19 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:36:46 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ char	*ft_itoa(long int n)
 	return (str);
 }
 
-
 static int	ft_abs(int nb)
 {
 	if (nb < 0)
@@ -86,31 +85,31 @@ char	*hex_itoa(unsigned int nb, char *tab)
 	return (str);
 }
 
-/*
-char	*hex_itoa(int nb, char *base)
-{
-	int		size;
-	int		nbr[50];
-	int		i;
-	int		j;
-	char	*str;
 
-	i = 0;
-	size = ft_strlen(base);
-	while (nb)
+char	*long_hex_itoa(unsigned long long int nb, char *tab)
+{
+	char						*str;
+	int							size;
+	unsigned long long int		temp;
+	int							base;
+
+	base = 16;
+	size = 0;
+	temp = nb;
+	while (temp /= base)
+		size++;
+	size += 1;
+	str = (char *)malloc(sizeof(char) * size + 1);
+	str[size] = '\0';
+	while (size)
 	{
-		nbr[i] = nb % size;
-		nb = nb / size;
-		i++;
+		str[size - 1] = tab[ft_abs(nb % base)];
+		size--;
+		nb /= base;
 	}
-	str = malloc(sizeof(char) * (i + 1));
-	j = 0;
-	while (--i >= 0)
-		str[j++] = base[nbr[i]];
-	str[j] = '\0';
 	return (str);
 }
-*/
+/*
 char	*long_hex_itoa(unsigned long long int nb, char *base)
 {
 	int		size;
@@ -134,7 +133,7 @@ char	*long_hex_itoa(unsigned long long int nb, char *base)
 	str[j] = '\0';
 	return (str);
 }
-
+*/
 int	ft_atoi(const char *nptr)
 {
 	int		i;
