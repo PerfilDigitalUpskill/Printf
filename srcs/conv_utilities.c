@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 17:13:52 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:59:15 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,39 @@ char	*ft_itoa(long int n)
 	return (str);
 }
 
+
+static int	ft_abs(int nb)
+{
+	if (nb < 0)
+		nb = -nb;
+	return (nb);
+}
+
+char	*hex_itoa(int nb, char *tab)
+{
+	char	*str;
+	int		size;
+	int		temp;
+	int		base;
+
+	base = 16;
+	size = 0;
+	temp = nb;
+	while (temp /= base)
+		size++;
+	size += 1;
+	str = (char *)malloc(sizeof(char) * size + 1);
+	str[size] = '\0';
+	while (size)
+	{
+		str[size - 1] = tab[ft_abs(nb % base)];
+		size--;
+		nb /= base;
+	}
+	return (str);
+}
+
+/*
 char	*hex_itoa(int nb, char *base)
 {
 	int		size;
@@ -77,7 +110,7 @@ char	*hex_itoa(int nb, char *base)
 	str[j] = '\0';
 	return (str);
 }
-
+*/
 char	*long_hex_itoa(unsigned long long int nb, char *base)
 {
 	int		size;
