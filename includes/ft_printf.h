@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 14:58:51 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:28:30 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	flags_checker(t_flags *flags);
 void	handle_conversions(t_flags *flags, char **nbr, int len);
 void	signed_int_conversion(va_list args, t_flags *flags);
 void	unsigned_int_conversion(va_list args, t_flags *flags);
-void	hex_low_conversion(va_list args, t_flags *flags);
-void	hex_up_conversion(va_list args, t_flags *flags);
+void	hex_conversion(va_list args, t_flags *flags);
 
 void	ch_flags_checker(t_flags *flags);
 void	string_conversion(va_list args, t_flags *flags);
@@ -53,7 +52,7 @@ void	handle_negs(char **nbr, int len);
 char	*apply_precision(char *nbr, int len, t_flags *flags);
 
 char	*ft_itoa(long int n);
-char	*hex_itoa(int nb, char *tab);
+char	*hex_itoa(unsigned int nb, char *tab);
 char	*long_hex_itoa(unsigned long long int nb, char *base);
 int		ft_atoi(const char *nptr);
 
