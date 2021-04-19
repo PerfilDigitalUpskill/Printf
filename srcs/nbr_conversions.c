@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 18:35:28 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:28:32 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,29 +101,15 @@ void	unsigned_int_conversion(va_list args, t_flags *flags)
 	freebird((void *)&nbr);
 }
 
-void	hex_low_conversion(va_list args, t_flags *flags)
+void	hex_conversion(va_list args, t_flags *flags)
 {
 	char					*nbr;
 	int						len;
 
-	nbr = hex_itoa(va_arg(args, unsigned int), "0123456789abcdef");
-	if (nbr[0] == '0' && nbr[1] == '\0' && flags->precision == 0)
-	{
-		freebird((void *)&nbr);
-		nbr = ft_strdup("");
-	}	
-	len = ft_strlen(nbr);
-	flags_checker(flags);
-	handle_conversions(flags, &nbr, len);
-	freebird((void *)&nbr);
-}
-
-void	hex_up_conversion(va_list args, t_flags *flags)
-{
-	char					*nbr;
-	int						len;
-
-	nbr = hex_itoa(va_arg(args, unsigned int), "0123456789ABCDEF");
+	if (flags->conversion == 'x')
+		nbr = hex_itoa(va_arg(args, unsigned int), "0123456789abcdef");
+	if (flags->conversion == 'X')
+		nbr = hex_itoa(va_arg(args, unsigned int), "0123456789ABCDEF");
 	if (nbr[0] == '0' && nbr[1] == '\0' && flags->precision == 0)
 	{
 		freebird((void *)&nbr);

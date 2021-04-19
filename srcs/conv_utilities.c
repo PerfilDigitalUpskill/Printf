@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:59:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 14:59:15 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:23:19 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ static int	ft_abs(int nb)
 	return (nb);
 }
 
-char	*hex_itoa(int nb, char *tab)
+char	*hex_itoa(unsigned int nb, char *tab)
 {
-	char	*str;
-	int		size;
-	int		temp;
-	int		base;
+	char				*str;
+	int					size;
+	unsigned int		temp;
+	int					base;
 
 	base = 16;
 	size = 0;

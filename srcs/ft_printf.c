@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 15:37:51 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:27:09 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ void	converter(va_list args, t_flags *flags)
 		signed_int_conversion(args, flags);
 	if (flags->conversion == 'u')
 		unsigned_int_conversion(args, flags);
-	if (flags->conversion == 'x')
-		hex_low_conversion(args, flags);
-	if (flags->conversion == 'X')
-		hex_up_conversion(args, flags);
+	if (flags->conversion == 'x' || flags->conversion == 'X')
+		hex_conversion(args, flags);
 	if (flags->conversion == 'p')
 		ptr_conversion(args, flags);
 }
