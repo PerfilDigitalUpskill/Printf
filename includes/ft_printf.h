@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 15:28:30 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:21:13 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ch_flags_checker(t_flags *flags);
 void	string_conversion(va_list args, t_flags *flags);
 void	char_conversion(va_list args, t_flags *flags);
 void	ptr_conversion(va_list args, t_flags *flags);
+void	percent_conversion(t_flags *flags);
 
 void	freebird(void **ptr);
 t_flags	init_flags(void);
