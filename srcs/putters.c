@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:47 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 15:36:15 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 13:36:31 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_putstr(char *str)
 
 void	ft_putnbr(int nb)
 {
-	if (nb == -2147483648)
+	if (nb == INT_MIN)
 	{
 		ft_putchar('-');
 		ft_putchar ('2');

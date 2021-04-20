@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 18:12:23 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 13:27:27 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	char_conversion(va_list args, t_flags *flags)
 		ft_putchar(' ');
 }
 
-
-
 void	ptr_conversion(va_list args, t_flags *flags)
 {
 	unsigned long long int	i;
@@ -72,7 +70,7 @@ void	ptr_conversion(va_list args, t_flags *flags)
 	char					*temp;
 
 	i = va_arg(args, unsigned long long int);
-	str = hex_itoa(i, "0123456789abcdef");
+	str = long_hex_itoa(i, "0123456789abcdef");
 	temp = ft_strjoin("0x", str);
 	freebird((void *)&str);
 	str = temp;
