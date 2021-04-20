@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:42:12 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/15 15:56:51 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 17:50:48 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_flags	init_flags(void)
 
 	flags.zero = 0;
 	flags.minus = 0;
+	flags.hash = 0;
 	flags.width = 0;
 	flags.precision = -1;
 	flags.neg = 0;
@@ -58,4 +59,17 @@ char	*apply_precision(char *nbr, int len, t_flags *flags)
 	freebird((void *)&str);
 	nbr = temp;
 	return (nbr);
+}
+
+void	handle_hash(char **nbr, t_flags *flags)
+{
+	char *temp;
+
+	if ((*nbr)[0] == '0' && (*nbr)[1] == '\0')
+		return ;
+	if (flags->conversion == 'x')
+		temp = ft_strjoin("0x", *nbr);
+	if (flags->conversion == 'X')
+		temp = ft_strjoin("0X", *nbr);
+	*nbr = temp;
 }

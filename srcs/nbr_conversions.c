@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 18:12:25 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 17:35:32 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,9 @@ void	hex_conversion(va_list args, t_flags *flags)
 	{
 		freebird((void *)&nbr);
 		nbr = ft_strdup("");
-	}	
+	}
+	if (flags->hash == 1)
+		handle_hash(&nbr, flags);
 	len = ft_strlen(nbr);
 	flags_checker(flags);
 	handle_conversions(flags, &nbr, len);

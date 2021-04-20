@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:13:18 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/20 15:21:13 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 17:36:43 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_flags
 {
 	int			zero;
 	int			minus;
+	int			hash;
 	int			width;
 	int			precision;
 	int			neg;
@@ -49,8 +50,8 @@ void	percent_conversion(t_flags *flags);
 void	freebird(void **ptr);
 t_flags	init_flags(void);
 char	*precision_zeros(int len);
-void	handle_negs(char **nbr, int len);
 char	*apply_precision(char *nbr, int len, t_flags *flags);
+void	handle_hash(char **nbr, t_flags *flags);
 
 char	*ft_itoa(long int n);
 char	*hex_itoa(unsigned int nb, char *tab);

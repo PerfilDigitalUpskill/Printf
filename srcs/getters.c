@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:10:14 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/20 15:16:00 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:15:09 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ void	get_flags(char *str, int *i, t_flags *flags)
 	int		z;
 
 	z = *i;
-	while (str[z] && (str[z] == '0' || str[z] == '-'))
+	while (str[z] && (str[z] == '0' || str[z] == '-' || str[z] == '#'))
 	{
 		if (str[z] == '0')
 			flags->zero = 1;
 		if (str[z] == '-')
 			flags->minus = 1;
+		if (str[z] == '#')
+			flags->hash = 1;
 		z++;
 	}
 	*i = z;
