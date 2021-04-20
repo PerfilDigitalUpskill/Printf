@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:08:38 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/19 17:44:32 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:15:21 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	converter(va_list args, t_flags *flags)
 		hex_conversion(args, flags);
 	if (flags->conversion == 'p')
 		ptr_conversion(args, flags);
+	if (flags->conversion == '%')
+		percent_conversion(flags);
 }
 
 int	conversion_parser(char *str, va_list args, int i)
@@ -50,15 +52,7 @@ int	parse_str(char *str, va_list args)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-		{
-			if (str[i + 1] == '%')
-			{
-				ft_putchar(str[i + 1]);
-				i++;
-			}
-			else
-				i = conversion_parser(str, args, i);
-		}
+			i = conversion_parser(str, args, i);
 		else
 			ft_putchar(str[i]);
 		i++;

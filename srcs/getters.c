@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:10:14 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/14 14:55:21 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:16:00 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,7 @@ void	get_conversion(char *str, int *i, t_flags *flags)
 		flags->conversion = 'x';
 	else if (str[z] == 'X')
 		flags->conversion = 'X';
+	else if (str[z] == '%')
+		flags->conversion = '%';
 	*i = z;
 }
