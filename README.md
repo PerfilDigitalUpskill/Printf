@@ -1,20 +1,17 @@
 # printf
-Recode of printf function innit blud
+Recode of printf function for @42Lisboa
 
 PROGRESS:
 
+Includes the following conversions
 ```
-c conversions ✅
-s conversions ✅
-d conversions ✅
-i conversions ✅
-u conversions ✅
-x conversions ✅
-X conversions ✅
-p conversions ❌
-% conversions ✅
+cspdiuxX%
 ```
-
+The following flags
+```
+-+0 #
+```
+As well as precision and minimum field width
 
 TO DO:
 
