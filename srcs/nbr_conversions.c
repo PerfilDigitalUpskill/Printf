@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/21 13:15:57 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 15:12:34 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	flags_checker(t_flags *flags)
 		flags->zero = 0;
 	if (flags->zero && flags->precision >= 0)
 		flags->zero = 0;
-	if (flags->space && flags->plus)
-		flags->space = 0;
 }
 
 void	handle_conversions(t_flags *flags, char **nbr, int len)
@@ -75,8 +73,6 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 		nbr = apply_precision(nbr, len, flags);
 	if (!(flags->neg) && flags->space)
 		nbr = apply_space(nbr);
-	if (flags->plus)
-		nbr = apply_plus(nbr);
 	handle_conversions(flags, &nbr, len);
 	freebird((void *)&nbr);
 }
@@ -116,8 +112,6 @@ void	hex_conversion(va_list args, t_flags *flags)
 		freebird((void *)&nbr);
 		nbr = ft_strdup("");
 	}
-	if (flags->hash == 1)
-		handle_hash(&nbr, flags);
 	len = ft_strlen(nbr);
 	flags_checker(flags);
 	if (flags->precision > len)
