@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:42:12 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/20 17:50:48 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 13:11:11 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_flags	init_flags(void)
 	flags.zero = 0;
 	flags.minus = 0;
 	flags.hash = 0;
+	flags.space = 0;
+	flags.plus = 0;
 	flags.width = 0;
 	flags.precision = -1;
 	flags.neg = 0;

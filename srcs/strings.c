@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:14:21 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/12 16:25:10 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 13:17:39 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+char	*apply_plus(char *nbr)
+{
+	char *temp;
+
+	temp = ft_strjoin("+", nbr);
+	freebird((void *)&nbr);
+	nbr = temp;
+	return (nbr);
 }

@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/20 17:35:32 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 13:15:57 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	flags_checker(t_flags *flags)
 		flags->zero = 0;
 	if (flags->zero && flags->precision >= 0)
 		flags->zero = 0;
+	if (flags->space && flags->plus)
+		flags->space = 0;
 }
 
 void	handle_conversions(t_flags *flags, char **nbr, int len)
 {
-	if (flags->precision > len)
-		*nbr = apply_precision(*nbr, len, flags);
 	len = ft_strlen(*nbr);
 	if (flags->neg)
 		len++;
@@ -62,14 +62,7 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	long int		k;
 
 	n = va_arg(args, int);
-	if (n < 0)
-	{
-		k = n;
-		k *= -1;
-		flags->neg = 1;
-	}
-	else
-		k = n;
+	k = handle_negs(n, flags);	
 	nbr = ft_itoa(k);
 	if (nbr[0] == '0' && nbr[1] == '\0' && flags->precision == 0)
 	{
@@ -78,6 +71,12 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	}	
 	len = ft_strlen(nbr);
 	flags_checker(flags);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
+	if (!(flags->neg) && flags->space)
+		nbr = apply_space(nbr);
+	if (flags->plus)
+		nbr = apply_plus(nbr);
 	handle_conversions(flags, &nbr, len);
 	freebird((void *)&nbr);
 }
@@ -97,6 +96,8 @@ void	unsigned_int_conversion(va_list args, t_flags *flags)
 	}	
 	len = ft_strlen(nbr);
 	flags_checker(flags);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
 	handle_conversions(flags, &nbr, len);
 	freebird((void *)&nbr);
 }
@@ -119,6 +120,8 @@ void	hex_conversion(va_list args, t_flags *flags)
 		handle_hash(&nbr, flags);
 	len = ft_strlen(nbr);
 	flags_checker(flags);
+	if (flags->precision > len)
+		nbr = apply_precision(nbr, len, flags);
 	handle_conversions(flags, &nbr, len);
 	freebird((void *)&nbr);
 }
