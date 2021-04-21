@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:54:46 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/20 15:21:45 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 16:05:34 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ptr_conversion(va_list args, t_flags *flags)
 
 void	percent_conversion(t_flags *flags)
 {
-	char *str;
+	char	*str;
 
 	str = malloc(sizeof(char) * 2);
 	str[0] = '%';

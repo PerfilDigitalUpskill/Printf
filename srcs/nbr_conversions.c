@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:28:50 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/21 15:12:34 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 16:06:19 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	signed_int_conversion(va_list args, t_flags *flags)
 	long int		k;
 
 	n = va_arg(args, int);
-	k = handle_negs(n, flags);	
+	k = handle_negs(n, flags);
 	nbr = ft_itoa(k);
 	if (nbr[0] == '0' && nbr[1] == '\0' && flags->precision == 0)
 	{

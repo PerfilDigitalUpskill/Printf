@@ -6,7 +6,7 @@
 /*   By: malmeida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:10:14 by malmeida          #+#    #+#             */
-/*   Updated: 2021/04/21 15:11:58 by malmeida         ###   ########.fr       */
+/*   Updated: 2021/04/21 16:06:00 by malmeida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	get_flags(char *str, int *i, t_flags *flags)
 		if (str[z] == '0')
 			flags->zero = 1;
 		if (str[z] == '-')
-			flags->minus = 1;	
+			flags->minus = 1;
 		if (str[z] == ' ')
 			flags->space = 1;
 		z++;
