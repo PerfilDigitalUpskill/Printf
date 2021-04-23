@@ -1,28 +1,17 @@
 # printf
 Recode of printf function for @42Lisboa
 
-PROGRESS:
 
-Includes the following conversions
+The versatility of the printf function in C represents a great exercise in programming for
+us. It will enable you to discover variadic functions in C.
+The key to a successful ft_printf is a well-structured and good extensible code.
+
+Includes the following conversions:
 ```
 cspdiuxX%
 ```
-The following flags
+The following flags:
 ```
 -+0 #
 ```
-As well as precision and minimum field width
-
-TO DO:
-
--make a Makefile. ✅
-
--separate functions into individual files (aka ORGANIZE). ✅
-
--run norminette.
-
--get return value working. ✅
-
--run actual tests instead of just my crappy main file.
-
-The projects a mess 🥳
+As well as precision and minimum field width.
